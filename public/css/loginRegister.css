@@ -1,0 +1,97 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.head{
+    height: 100vh;
+    width: 100vw;
+    background: rgb(187, 187, 187);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    height: 80vh;
+    width: 30vw;
+    background-color: rgb(0, 255, 255);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 5px 5px 20px black;
+}
+.form{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.inputs input{
+    height: 40px;
+    width: 13.02vw;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    font-size: 15px;
+    padding-left: 20px;
+}
+.inputs{
+    border-bottom: 2px solid rgb(87, 87, 87);
+}
+i{
+color: rgb(0, 0, 0);
+}
+.social i{
+    margin-left: 20px;
+    font-size: 30px;
+    cursor: pointer;
+}
+.social i:hover{
+    color: rgb(74, 74, 74);
+}
+.form button{
+    padding: 10px 2.6vw;
+    background: rgb(255, 102, 0);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.6vw;
+
+}
+input:focus-visible{
+    outline: none;
+}
+
+.main .btn{
+    font-size: 20px;
+    color: black;
+    background-color: rgba(245, 222, 179, 0);
+    border: none;
+    cursor: pointer;    
+}
+.main2 .btn{
+    font-size: 20px;
+    color: black;
+    background-color: rgba(245, 222, 179, 0);
+    border: none;
+    cursor: pointer;
+}
+.main2{
+    height: 80vh;
+    width: 30vw;
+    background-color: rgb(0, 255, 255);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 5px 5px 20px black;
+
+}
+a{
+    text-decoration: none;
+    color: #000;
+}

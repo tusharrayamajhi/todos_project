@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= username %> todos</title>
+</head>
+<body>
+    <h1>wellcome to todo website</h1>
+    <% for(let task of todo){ %>
+    <h2><%= task.title  %></h2>
+    <h3><%=task.des  %></h3>
+    <h4><%= task.date %></h4>
+    <button><a href="/delete/<%=username %>/<%= id %>/<%= task.id %>">delete</a></button>
+    <a href="/edit/<%=username%>/<%= id %>/<%=task.id%>">edit</a>
+    <% } %>
+    <button><a href="/<%=username  %>/add/<%=id%>">ADD</a></button>
+</body>
+</html>
