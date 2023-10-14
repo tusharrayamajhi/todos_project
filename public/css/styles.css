@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@300&family=Khand:wght@600&family=Nunito+Sans:opsz,wght@6..12,300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--assis);
+}
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn {
+    outline: none;
+    border: none;
+    padding: 5px 20px ;
+}
+:root {
+    --assis: 'Assistant', sans-serif;
+    --khand: 'Khand', sans-serif;
+    --nuni: 'Nunito Sans', sans-serif;
+}
+a {
+    color: #000;
+    text-decoration: none;
+}
+.btn {
+    color: #fff;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff;
+}
+nav {
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    font-family: var(--khand);
+}
+.ADD {
+    background: #3d84ff; 
+}
+.EDIT {
+    background: rgb(255, 123, 0); 
+}
+.DEL {
+    background: rgb(255, 12, 12); 
+}
+section {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100vh;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+}
+.home {
+    width: 70%;
+    gap: 20px;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.title h1 {
+    font-weight: 900;
+    font-family: var(--assis);
+}
+.works {
+    position: relative;
+    background: url('https://wallpapercave.com/wp/wp7664129.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 30px;
+    background-attachment: fixed;
+}
+
+.task{
+    position: relative;
+    background-color: #fff;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    min-height: 400px;
+    border-radius: 5px;
+}
+.head {
+    background:#9abfff;
+}
+table, th, td {
+    border-collapse: collapse;
+    padding: 10px;
+}
+td {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}

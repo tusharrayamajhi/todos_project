@@ -4,9 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= username %> todos</title>
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <h1>wellcome to todo website</h1>
+    <header>
+        <a href="" class="logo">MakeNotes</a>
+        <nav>
+          <a href="">Dashboard</a>
+          <a class="ADD btn" href="/<%=username  %>/add/<%=id%>">Add tasks</a>
+        </nav>
+      </header>
+      <section class="home">
+        <div class="caption">
+          <div class="title">
+            <h1>
+              Subtracting from your list of priorities is as important as adding
+              to it.
+            </h1>
+            <p>
+              To-do lists can help you get, and stay, on top of important projects
+              and piles of tasks or decisions
+            </p>
+          </div>
+        </div>
+        <a class="ADD btn" href="#">Get sarted</a>
+      </section>
+  
+      <section class="works">
+        <div class="task">
+          <table style="width:100%">
+            <tr>
+              <th class="head" colspan="2">Tasks</th>
+            </tr>
+            <% for(let list of todo){ %>
+              <tr>
+                <td>
+                  <div class="tasks">
+                    <!-- <h3><%= list.id + 1 %></h3> -->
+                    <h3><%= list.title %></h3>
+                    <p><%= list.des %></p>
+                    <p><%= list.date  %></p>
+                  </div>
+                  <div class="btns">
+                    <a class="DEL btn" href="/delete/<%=username %>/<%= id %>/<%= list.id %>"
+                      >Delete</a
+                    >
+                    <a class="EDIT btn" href="/edit/<%=username%>/<%= id %>/<%=list.id%>"
+                      >Edit</a
+                    >
+                  </div>
+                </td>
+              </tr>
+            <% } %>
+          </table>
+        </div>
+      </section>
+    <!-- <h1>wellcome to todo website</h1>
     <% for(let task of todo){ %>
     <h2><%= task.title  %></h2>
     <h3><%=task.des  %></h3>
@@ -14,6 +68,6 @@
     <button><a href="/delete/<%=username %>/<%= id %>/<%= task.id %>">delete</a></button>
     <a href="/edit/<%=username%>/<%= id %>/<%=task.id%>">edit</a>
     <% } %>
-    <button><a href="/<%=username  %>/add/<%=id%>">ADD</a></button>
+    <button><a href="/<%=username  %>/add/<%=id%>">ADD</a></button> -->
 </body>
 </html>
