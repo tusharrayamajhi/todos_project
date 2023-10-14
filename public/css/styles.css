@@ -24,9 +24,7 @@ a {
     color: #000;
     text-decoration: none;
 }
-.btn {
-    color: #fff;
-}
+
 header {
     position: fixed;
     top: 0;
@@ -53,9 +51,7 @@ nav {
 .ADD {
     background: #3d84ff; 
 }
-.EDIT {
-    background: rgb(255, 123, 0); 
-}
+
 .DEL {
     background: rgb(255, 12, 12); 
 }
@@ -71,16 +67,8 @@ section {
     justify-content: center;
     background: transparent;
 }
-.home {
-    width: 70%;
-    gap: 20px;
-    align-items: flex-start;
-    flex-direction: column;
-}
-.title h1 {
-    font-weight: 900;
-    font-family: var(--assis);
-}
+
+
 .works {
     position: relative;
     background: url('https://wallpapercave.com/wp/wp7664129.jpg');
@@ -97,8 +85,9 @@ section {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    min-height: 400px;
+    height: 500px;
     border-radius: 5px;
+    overflow: scroll;
 }
 .head {
     background:#9abfff;
@@ -112,4 +101,18 @@ td {
     align-items: center;
     justify-content: space-between;
 
+}
+.icon{
+    border: none;
+    background-color: #00000000;
+    cursor: pointer;
+}
+.icon i{
+    font-size: 30px;
+    color: #3d84ff;
+}
+.btns{
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
 }

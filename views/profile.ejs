@@ -1,73 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= username %> todos</title>
-    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
     <header>
-        <a href="" class="logo">MakeNotes</a>
-        <nav>
-          <a href="">Dashboard</a>
-          <a class="ADD btn" href="/<%=username  %>/add/<%=id%>">Add tasks</a>
-        </nav>
-      </header>
-      <section class="home">
-        <div class="caption">
-          <div class="title">
-            <h1>
-              Subtracting from your list of priorities is as important as adding
-              to it.
-            </h1>
-            <p>
-              To-do lists can help you get, and stay, on top of important projects
-              and piles of tasks or decisions
-            </p>
-          </div>
-        </div>
-        <a class="ADD btn" href="#">Get sarted</a>
-      </section>
-  
-      <section class="works">
-        <div class="task">
-          <table style="width:100%">
-            <tr>
-              <th class="head" colspan="2">Tasks</th>
-            </tr>
-            <% for(let list of todo){ %>
-              <tr>
-                <td>
-                  <div class="tasks">
-                    <!-- <h3><%= list.id + 1 %></h3> -->
-                    <h3><%= list.title %></h3>
-                    <p><%= list.des %></p>
-                    <p><%= list.date  %></p>
-                  </div>
-                  <div class="btns">
-                    <a class="DEL btn" href="/delete/<%=username %>/<%= id %>/<%= list.id %>"
-                      >Delete</a
-                    >
-                    <a class="EDIT btn" href="/edit/<%=username%>/<%= id %>/<%=list.id%>"
-                      >Edit</a
-                    >
-                  </div>
-                </td>
-              </tr>
-            <% } %>
-          </table>
-        </div>
-      </section>
-    <!-- <h1>wellcome to todo website</h1>
-    <% for(let task of todo){ %>
-    <h2><%= task.title  %></h2>
-    <h3><%=task.des  %></h3>
-    <h4><%= task.date %></h4>
-    <button><a href="/delete/<%=username %>/<%= id %>/<%= task.id %>">delete</a></button>
-    <a href="/edit/<%=username%>/<%= id %>/<%=task.id%>">edit</a>
-    <% } %>
-    <button><a href="/<%=username  %>/add/<%=id%>">ADD</a></button> -->
-</body>
+      <a href="" class="logo">MakeNotes</a>
+      <nav>
+        <a href="">Dashboard</a>
+        <a class="ADD btn" href="/<%=username  %>/add/<%=id%>">Add tasks</a>
+      </nav>
+    </header>
+
+    <section class="works">
+      <div class="task">
+        <table style="width: 100%">
+          <tr>
+            <th class="head" colspan="2">Tasks</th>
+          </tr>
+          <% if(todo.length > 0){ %> <% for(let list of todo){ %>
+          <tr>
+            <td>
+              <div class="tasks">
+                <!-- <h3><%= list.id + 1 %></h3> -->
+                <h3><%= list.title %></h3>
+                <p><%= list.des %></p>
+                <p><%= list.date %></p>
+              </div>
+              <div class="btns">
+                <form
+                  method="post"
+                  action="/delete/<%=username %>/<%= id %>/<%= list.id %>?_method=DELETE"
+                >
+                  <button class="icon">
+                    <i class="fa-solid fa-trash"></i>
+                  </button>
+                </form>
+                <form
+                method="get"
+                action="/edit/<%=username%>/<%= id %>/<%=list.id%>"
+              >
+                <button class="icon">
+                  <i class="fa-solid fa-pen-to-square"></i>
+                </button>
+              </form>
+                <!-- <a
+                  href="/edit/<%=username%>/<%= id %>/<%=list.id%>"
+                  class="icon"
+                  ><i class="fa-solid fa-pen-to-square"></i
+                ></a> -->
+              </div>
+            </td>
+          </tr>
+          <% } %> <% }else{ %>
+          <tr>
+            <td>
+              <div class="tasks">
+                <h1>Nothing to show</h1>
+              </div>
+            </td>
+          </tr>
+          <% } %>
+        </table>
+      </div>
+    </section>
+  </body>
 </html>

@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const bcrypt = require('bcrypt');
+const methooverride = require("method-override");
 const path = require("path");
 const {v4 :uuidv4} = require('uuid');
 const date = require('date-and-time');
@@ -9,10 +10,11 @@ app.use(express.static(path.join(__dirname,"/public/css")));
 // app.use(express.static(path.join(__dirname,"public/js")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(methooverride("_method"));
 
 
 app.get("/",(req,res)=>{
-    res.render("index",{j:"j"});
+    res.render("index");
 });
 let users = [
     
@@ -67,7 +69,7 @@ app.get("/edit/:username/:userid/:todoid",(req,res)=>{
         }
     }
 });
-app.post("/update/:username/:todoid/:userid",(req,res)=>{
+app.patch("/update/:username/:todoid/:userid",(req,res)=>{
     let {username,todoid,userid } = req.params;
     let user = users.find((p)=>userid === p.id);
     let todo = user.todos;
@@ -92,7 +94,7 @@ app.post("/add/addtask/:username/:userid",(req,res)=>{
     user.todos.push(task);
     res.redirect(`/profile/${username}/${userid}`);
 });
-app.get("/delete/:username/:userid/:todoid",(req,res)=>{
+app.delete("/delete/:username/:userid/:todoid",(req,res)=>{
     let {username,userid,todoid} = req.params;
     let user = users.find((p)=>userid == p.id);
     user.todos = user.todos.filter((p)=>todoid != p.id);
@@ -101,3 +103,4 @@ app.get("/delete/:username/:userid/:todoid",(req,res)=>{
 app.listen("3000",()=>{
     console.log("server is running");
 });
+
