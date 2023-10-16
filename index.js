@@ -7,7 +7,6 @@ const {v4 :uuidv4} = require('uuid');
 const date = require('date-and-time');
 app.set("view engine","ejs");
 app.use(express.static(path.join(__dirname,"/public/css")));
-// app.use(express.static(path.join(__dirname,"public/js")));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(methooverride("_method"));

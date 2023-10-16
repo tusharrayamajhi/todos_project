@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>edit your todo</title>
+<%- include("includes/head") %>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <form action="/update/<%=username  %>/<%= work.id%>/<%= userid  %>?_method=PATCH" method="post">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" value="<%= work.title%>">
-        <label for="des">description</label>
-        <input type="text" name="des" id="des" value="<%= work.des%>">
-        <input type="submit">
-    </form>
+    <form action="/update/<%=username  %>/<%= work.id%>/<%= userid  %>?_method=PATCH" method="post" class="container">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Title</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" value="<%= work.title %>" name="title">
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">description</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"  name="des"><%= work.des %></textarea>
+          </div>
+          <input type="submit" value="UPDATE" class="btn btn-primary">
+        </form>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
